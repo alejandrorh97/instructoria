@@ -10,7 +10,7 @@
 
 1. **Clone the repository**
 ```bash
-git clone <repository-url>
+git clone https://github.com/alejandrorh97/instructoria
 cd <project-folder>
 ```
 
