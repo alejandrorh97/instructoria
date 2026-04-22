@@ -1,7 +1,13 @@
 <?php
 
 use App\Http\Controllers\AuthController;
+use App\Http\Controllers\CategoryController;
+use App\Http\Controllers\ClassificationController;
+use App\Http\Controllers\MovieController;
 use App\Http\Controllers\PostController;
+use App\Http\Controllers\RoomController;
+use App\Http\Controllers\RoomTypeController;
+use App\Http\Controllers\ShowtimeController;
 use App\Http\Controllers\UserController;
 use Illuminate\Support\Facades\Route;
 
@@ -15,6 +21,14 @@ Route::prefix('auth')->group(function () {
         Route::post('/logout', [AuthController::class, 'logout']);
     });
 });
+
+
+Route::apiResource('categories', CategoryController::class);
+Route::apiResource('classifications', ClassificationController::class);
+Route::apiResource('movies', MovieController::class);
+Route::apiResource('room-types', RoomTypeController::class);
+Route::apiResource('rooms', RoomController::class);
+Route::apiResource('showtimes', ShowtimeController::class);
 
 Route::middleware('auth:api')->group(function () {
     Route::prefix('users')->group(function () {
